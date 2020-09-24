@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  
+<div id="app">
+  <h1> {{ heading }}</h1>
+  <p> {{ greeting }}</p>
+  <p>is it true: {{isItTrue ? 'Yes': 'No'}}</p>
+  <p>{{array[0]}}</p>
+  <p>{{obj.car}}</p>
+
+</div>
+<div id="app2">
+
+  <h2>{{heading}}</h2>
+  <p>{{greeting}}</p>
+</div>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        heading: "Hello ",
+        greeting: 'Hello Everyone',
+        isItTrue: true,
+        array: ['francis', 'Jane'],
+        obj: {
+          car: 'honda'
+        }
+      }
+    })
+    new Vue({
+      el:"#app2",
+      data: {
+        heading: "This should be a heading 2",
+        greeting: "This should be a greating too, But take note of the namings - for example (heading and greeting) are the same Data Names"
+      }
+    })
+
+  </script>
+</body>
+</html>
