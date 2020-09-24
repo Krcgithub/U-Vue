@@ -14,7 +14,8 @@
   <p>is it true: {{isItTrue ? 'Yes': 'No'}}</p>
   <p>{{array[0]}}</p>
   <p>{{obj.car}}</p>
-
+  <p>{{func()}}</p>
+  <p>{{welcome()}}</p>
 </div>
 <div id="app2">
 
@@ -32,6 +33,15 @@
         array: ['francis', 'Jane'],
         obj: {
           car: 'honda'
+        },
+        func:()=>{
+          return 'Message from function'
+        }
+        
+      },
+      methods:{
+        welcome(){
+          return this.greeting
         }
       }
     })
