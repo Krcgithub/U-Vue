@@ -10,27 +10,44 @@
   
 <div id="app">
 
-  <h1> {{ name }}</h1>
-  {{ update() }}
+  <!-- <h1> {{ name }}</h1>
+  <div v-on:click="updateName">
+    Click me!!
+  </div> -->
+    
+<div class="box" v-on:mousemove="getCord">
+  hover me
+</div>
+<p>x: {{ x }}</p>
+<p>y: {{ y }}</p>
 
   </div>
 
-  <script>
+  
+</body>
+
+
+
+<script>
     new Vue({
       el:"#app",
       data:{
-        name:'francis'
+        name:'francis',
+        x: 0,
+        y: 0,
       },
       methods:{
-        update(){
-          setTimeout(()=>{
-              this.name = 'Steve'
-          },2000),
-          setTimeout(()=>{
-              this.name = 'Kelton - your are catching on'
-          },4000)
+        updateName(){
+          this.name = "Kelton";
+
+        },
+        getCord(event){
+          this.x = event.clientX;
+          this.y = event.clientY;
+
         }
       }
+      
     })
     // new Vue({
     //   el:"#app2",
@@ -41,5 +58,11 @@
     // })
 
   </script>
-</body>
+  <style>
+    .box {
+      background: red;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
 </html>
