@@ -9,17 +9,30 @@
 <body>
   
 <div id="app">
-  <img v-bind:src="src" v-bind:alt="alt"/>
-  <hr>
-  <a v-bind:href="link">Go to Google </a>
-  <hr>
-  <p v-text="myText"></p>
+  <!-- <p v-if="userAge > allowedAge">
+    You are clear to enter</p>
+    <p v-else-if="user ==='francis'">also good to go</p>
+    <p v-else>
+      You are not allowed
+    </p> -->
+  
+<p v-if="checkUser()">
+  Show it
+</p>
+<p v-else>
+  the equates to false
+</p>
 
-  <div v-html="myHtml">
-    
   </div>
 
-</div>
+  <p v-show="user === 'francis'">
+    show it
+  </p>
+  <p v-show="user !== 'francis'">
+    dont show it
+  </p>
+
+
 <!-- <div id="app2">
 
   <h2>{{heading}}</h2>
@@ -28,13 +41,16 @@
 
   <script>
     new Vue({
-      el: "#app",
-      data: {
-        src:"https://picsum.photos/id/237/200/300",
-        alt:"Cute Puppy",
-        link:"https://kelticcompanies.com",
-        myText:"This is my text",
-        myHtml:"<strong>This is a New div</strong>"
+      el:"#app",
+      data:{
+        user: "francies",
+        userAge:15,
+        allowedAge:18
+      },
+      methods:{
+        checkUser(){
+          return this.user === "francies"
+        }
       }
     })
     // new Vue({
