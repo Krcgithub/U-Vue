@@ -9,49 +9,41 @@
 <body>
   
 <div id="app">
-  <h1> {{ heading }}</h1>
-  <p> {{ greeting }}</p>
-  <p>is it true: {{isItTrue ? 'Yes': 'No'}}</p>
-  <p>{{array[0]}}</p>
-  <p>{{obj.car}}</p>
-  <p>{{func()}}</p>
-  <p>{{welcome()}}</p>
+  <img v-bind:src="src" v-bind:alt="alt"/>
+  <hr>
+  <a v-bind:href="link">Go to Google </a>
+  <hr>
+  <p v-text="myText"></p>
+
+  <div v-html="myHtml">
+    
+  </div>
+
 </div>
-<div id="app2">
+<!-- <div id="app2">
 
   <h2>{{heading}}</h2>
   <p>{{greeting}}</p>
-</div>
+</div> -->
 
   <script>
     new Vue({
       el: "#app",
       data: {
-        heading: "Hello ",
-        greeting: 'Hello Everyone',
-        isItTrue: true,
-        array: ['francis', 'Jane'],
-        obj: {
-          car: 'honda'
-        },
-        func:()=>{
-          return 'Message from function'
-        }
-        
-      },
-      methods:{
-        welcome(){
-          return this.greeting
-        }
+        src:"https://picsum.photos/id/237/200/300",
+        alt:"Cute Puppy",
+        link:"https://kelticcompanies.com",
+        myText:"This is my text",
+        myHtml:"<strong>This is a New div</strong>"
       }
     })
-    new Vue({
-      el:"#app2",
-      data: {
-        heading: "This should be a heading 2",
-        greeting: "This should be a greating too, But take note of the namings - for example (heading and greeting) are the same Data Names"
-      }
-    })
+    // new Vue({
+    //   el:"#app2",
+    //   data: {
+    //     heading: "This should be a heading 2",
+    //     greeting: "This should be a greating too, But take note of the namings - for example (heading and greeting) are the same Data Names"
+    //   }
+    // })
 
   </script>
 </body>
